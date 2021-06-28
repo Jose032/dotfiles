@@ -18,6 +18,8 @@ set termguicolors
 
 set updatetime=50
 
+set clipboard=unnamedplus
+
 call plug#begin('~/.vim/plugged')
 Plug 'gruvbox-community/gruvbox'
 
