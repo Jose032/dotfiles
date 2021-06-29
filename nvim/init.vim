@@ -32,6 +32,7 @@ highlight LineNr guifg=#5eacd3
 
 
 let mapleader = " "
+nnoremap <leader>e :Ex<CR>
 
 fun! TrimWhitespace()
     let l:save = winsaveview()
