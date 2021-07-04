@@ -21,7 +21,9 @@ set updatetime=50
 set clipboard=unnamedplus
 
 call plug#begin('~/.vim/plugged')
+
 Plug 'gruvbox-community/gruvbox'
+Plug 'neovim/nvim-lspconfig'
 
 call plug#end()
 
@@ -32,7 +34,9 @@ highlight LineNr guifg=#5eacd3
 
 
 let mapleader = " "
-nnoremap <leader>e :Ex<CR>
+nnoremap <leader>e :Lex<CR>
+nnoremap <leader>s :Sex<CR>
+nnoremap <leader>v :Vex<CR>
 
 fun! TrimWhitespace()
     let l:save = winsaveview()
@@ -44,3 +48,7 @@ augroup THE_PRIMEAGEN
     autocmd!
     autocmd BufWritePre * :call TrimWhitespace()
 augroup END
+
+lua << EOF
+require'lspconfig'.pyright.setup{}
+EOF
